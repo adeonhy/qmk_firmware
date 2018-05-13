@@ -17,21 +17,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* BASE
  * ,------------------------------------------------.   ,------------------------------------------------.
- * | ESC  | Tab  |   Q  |   W  |   E  |   R  |  T   |   |  Y   |   U  |   I  |   O  |   P  |   [  | Bksp |
- * |------+------+------+------+------+------+------|   |-------------+------+------+------+------+------|
- * |  [   |]/Ctrl|   A  |   S  |   D  |   F  |  G   |   |  H   |   J  |   K  |   L  |   ;  |   '  | Enter|
- * |------+------+------+------+------+------+------|   |------|------+------+------+------+------+------|
- * | SYMB | LSft |   Z  |   X  |   C  |   V  |  B   |   |  N   |   M  |   ,  |   .  |   /  |   \  | ESC  |
+ * | ESC  | Tab  |   Q  |   W  |   E  |   R  |  T   |   |  Y   |   U  |   I  |   O  |   P  | ESC  | Bksp |
  * |------+------+------+------+------+------+------|   |------+------+------+------+------+------+------|
- * | LEFT | UP   | META |  ESC | LAlt | LGUI |Space |   |Space | RGUI | DOWN | RIGHT|   `  |   -  |   =  |
+ * |      |  Ctrl|   A  |   S  |   D  |   F  |  G   |   |  H   |   J  |   K  |   L  |   ;  |   '  | Enter|
+ * |------+------+------+------+------+------+------|   |------+------+------+------+------+------+------|
+ * |      | (LSft|   Z  |   X  |   C  |   V  |  B   |   |  N   |   M  |   ,  |   .  |   /  |   \  | RSft)|
+ * |------+------+------+------+------+------+------|   |------+------+------+------+------+------+------|
+ * | [    |  ]   | META |  ESC | LAlt | LGUI |Space |   |Space | RGUI | DOWN | RIGHT|   `  |   -  |   =  |
  * `------------------------------------------------'   `------------------------------------------------'
  */
 
 [BASE] = KEYMAP( \
-  KC_ESC,   KC_TAB,  KC_Q,     KC_W,   KC_E,    KC_R,    KC_T,   KC_Y,   KC_U,    KC_I,    KC_O,   KC_P,    KC_LBRC, KC_BSPC, \
-  KC_LPRN,  CTL_T(KC_RPRN), KC_A,     KC_S,   KC_D,    KC_F,    KC_G,   KC_H,   KC_J,    KC_K,    KC_L,   KC_SCLN, KC_QUOT, KC_ENT, \
-  LT(SYMB,KC_LPRN), KC_RSPC, KC_Z,     KC_X,   KC_C,    KC_V,    KC_B,   KC_N,   KC_M,    KC_COMM, KC_DOT, KC_SLSH, KC_BSLS, KC_ESC, \
-  KC_LBRC,  KC_RBRC,   MO(META), MO(SYMB), KC_LALT, KC_LGUI, KC_SPC, KC_SPC, KC_RGUI, KC_DOWN, KC_RGHT,KC_GRV,  KC_MINS, KC_EQL \
+  KC_ESC,   KC_TAB,  KC_Q,     KC_W,   KC_E,    KC_R,    KC_T,   KC_Y,   KC_U,    KC_I,    KC_O,   KC_P,    KC_ESC, KC_BSPC, \
+  _______,  KC_LCTL, KC_A,     KC_S,   KC_D,    KC_F,    KC_G,   KC_H,   KC_J,    KC_K,    KC_L,   KC_SCLN, KC_QUOT, KC_ENT, \
+  _______,  KC_LSPO, KC_Z,     KC_X,   KC_C,    KC_V,    KC_B,   KC_N,   KC_M,    KC_COMM, KC_DOT, KC_SLSH, KC_BSLS, KC_RSPC, \
+  KC_LBRC,  KC_RBRC, MO(META), MO(SYMB), KC_LALT, KC_LGUI, LT(SYMB, KC_SPC), LT(META, KC_SPC), KC_RGUI, KC_DOWN, KC_RGHT,KC_GRV,  KC_MINS, KC_EQL \
 ),
 
 /* META
@@ -55,21 +55,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* SYMB
  * ,------------------------------------------------.   ,------------------------------------------------.
- * | RESET|   !  |   @  |   #  |   $  |   %  |  [   |   |  ]   |   ^  |   &  |   *  |   (  |   )  | Bksp |
+ * | RESET|      |   !  |   @  |   #  |   $  |  %   |   |  ^   |   &  |   *  |   (  |   )  |      | Bksp |
  * |------+------+------+------+------+------+------|   |-------------+------+------+------+------+------|
- * | Del  |      |      |      |      |      |  (   |   |  )   |      |      |      |      |      | Enter|
+ * | Del  |      |      |      |      |      |      |   |      |      |      |      |      |      | Enter|
  * |------+------+------+------+------+------+------|   |------|------+------+------+------+------+------|
- * | SYMB |      |      |      |      |      |  {   |   |  }   |      |      |      |      |  UP  | ESC  |
+ * | SYMB |      |      |      |      |      |      |   |      |      |      |      |      |  UP  | ESC  |
  * |------+------+------+------+------+------+------|   |------+------+------+------+------+------+------|
  * | META | LCtrl|   `  |   \  | LAlt | LGUI |Space |   |Space | RGUI | RALT |      | LEFT | DOWN | RIGHT|
  * `------------------------------------------------'   `------------------------------------------------'
  */
 
 [SYMB] = KEYMAP( \
-  _______, S(KC_1), S(KC_2), S(KC_3), S(KC_4), S(KC_5), KC_LBRC,    KC_RBRC,    S(KC_6), S(KC_7), S(KC_8), S(KC_9), S(KC_0), _______, \
-  _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, S(KC_9),    S(KC_0),    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______, \
-  _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, S(KC_LBRC), S(KC_RBRC), XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_UP,   _______, \
-  _______, _______, _______, _______, _______, _______, _______,    _______,    _______, _______, _______, KC_LEFT, KC_DOWN, KC_RGHT \
+  _______, _______, S(KC_1), S(KC_2), S(KC_3), S(KC_4), S(KC_5),    S(KC_6), S(KC_7), S(KC_8), S(KC_9), S(KC_0), _______, _______, \
+  _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______, \
+  _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_UP,   _______, \
+  _______, _______, _______, _______, _______, _______, _______,    _______, _______, _______, _______, KC_LEFT, KC_DOWN, KC_RGHT \
 )
 };
 
