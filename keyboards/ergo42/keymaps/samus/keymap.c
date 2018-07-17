@@ -86,9 +86,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `------------------------------------------------'   `------------------------------------------------'
  */
 [NUM] = KEYMAP( \
-  KC_TAB,   KC_Q,    KC_W,   KC_E,    KC_R,   KC_T,   KC_RBRC,    KC_BSLS,    KC_Y,   KC_7,    KC_8,     KC_9,    _______,    KC_LBRC, \
-  KC_LALT,  KC_A,    KC_S,   KC_D,    KC_F,   KC_G,   S(KC_8),    S(KC_9),    KC_H,   KC_4,    KC_5,     KC_6,    _______,    KC_QUOT, \
-  KC_LSFT,  KC_Z,    KC_X,   KC_C,    KC_V,   KC_B,   S(KC_RBRC), S(KC_BSLS), KC_0,   KC_1,    KC_2,     KC_3,    KC_MS_U, SFT_T(KC_RO), \
+  KC_TAB,   KC_Q,    KC_W,   KC_E,    KC_R,   KC_T,   KC_RBRC,    KC_BSLS,    KC_Y,   KC_7,    KC_8,     KC_9,    _______,    KC_WH_U, \
+  KC_LALT,  KC_A,    KC_S,   KC_D,    KC_F,   KC_G,   S(KC_8),    S(KC_9),    KC_H,   KC_4,    KC_5,     KC_6,    KC_WH_L,    KC_WH_R, \
+  KC_LSFT,  KC_Z,    KC_X,   KC_C,    KC_V,   KC_B,   S(KC_RBRC), S(KC_BSLS), KC_0,   KC_1,    KC_2,     KC_3,    KC_MS_U,    KC_WH_D, \
   _______, KC_LGUI, KC_APP, KC_PSCR, KC_ESC, KC_BTN2, KC_BTN1,     KC_BSPC,    KC_ENT, KC_DELT, KC_PSCR,  KC_MS_L,  KC_MS_D, KC_MS_R \
 )
 
