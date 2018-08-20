@@ -13,6 +13,11 @@ extern keymap_config_t keymap_config;
 #define _______ KC_TRNS
 #define XXXXXXX KC_NO
 
+enum {
+  TD_LRGUI = 0,
+  TD_BTN23
+};
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* BASE
@@ -32,7 +37,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_TAB,   KC_Q,    KC_W,   KC_E,    KC_R,    KC_T,             S(KC_COMM),    S(KC_DOT),  KC_Y,             KC_U,    KC_I,     KC_O,     KC_P,     KC_MINS, \
   KC_LCTRL, KC_A,    KC_S,   KC_D,    KC_F,    KC_G,             S(KC_9),       S(KC_0),    KC_H,             KC_J,    KC_K,     KC_L,     KC_SCLN,  KC_QUOT, \
   KC_LSFT,  KC_Z,    KC_X,   KC_C,    KC_V,    KC_B,             KC_LBRC,       KC_RBRC,    KC_N,             KC_M,    KC_COMM,  KC_DOT,   KC_SLSH,  SFT_T(KC_BSLS), \
-  LT(NUM, KC_EQL),   KC_GRV, KC_BTN2, KC_LALT, KC_LGUI, LT(SYMB, KC_SPC), KC_ENT,        KC_BSPC,    LT(META, KC_SPC), KC_ESC,  KC_RGUI,  LGUI(KC_C), LGUI(KC_V), LALT_T(KC_ENT) \
+  LT(NUM, KC_EQL),   KC_GRV, KC_BTN2, KC_LALT, TD(TD_LRGUI), LT(SYMB, KC_SPC), KC_ENT,        KC_BSPC,    LT(META, KC_SPC), KC_ESC,  KC_BTN3,  LGUI(KC_C), LGUI(KC_V), LALT_T(KC_ENT) \
 ),
 
 /* META
@@ -94,3 +99,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 };
 
+qk_tap_dance_action_t tap_dance_actions[] = {
+  [TD_LRGUI] = ACTION_TAP_DANCE_DOUBLE(KC_LGUI, KC_RGUI),
+  [TD_BTN23] = ACTION_TAP_DANCE_DOUBLE(KC_BTN2, KC_BTN3)
+};

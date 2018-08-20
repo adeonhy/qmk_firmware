@@ -34,4 +34,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define MASTER_RIGHT
 // #define EE_HANDS
 
+#ifdef TAPPING_TERM
+#undef TAPPING_TERM
+#define TAPPING_TERM 120
+#endif
+
 #endif
